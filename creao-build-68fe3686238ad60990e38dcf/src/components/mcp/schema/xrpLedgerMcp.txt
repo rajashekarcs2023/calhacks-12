@@ -1,0 +1,33 @@
+Mcp name: xrpLedgerMcp
+Mcp Id: 68fdc0a9bc26c8c446520035
+Mcp Url: https://xrpledger-mcp.fastmcp.app/mcp
+Schema info:
+
+Here is the input and output schema info of Tool xrpl_timestamp of Mcp xrpLedgerMcp (Mcp Id: 68fdc0a9bc26c8c446520035):
+inputSchema:
+{"type":"object","properties":{"sha256_hex_str":{"type":"string","description":"SHA-256 hash of the document (64 hexadecimal characters)"},"meta":{"type":"object","description":"Optional metadata such as serviceId and caseId","properties":{"serviceId":{"type":"string"},"caseId":{"type":"string"}}}},"required":["sha256_hex_str"]}
+outputSchema:
+{"type":"object","properties":{"txHash":{"type":"string","description":"XRPL transaction hash"},"explorerUrl":{"type":"string","description":"URL to view transaction on XRPL testnet explorer"},"ledgerIndex":{"type":"number","description":"Ledger index where transaction was validated"},"validated":{"type":"boolean","description":"Whether the transaction has been validated"}}}
+schema info of xrpl_timestamp ends.
+
+Here is the input and output schema info of Tool verify of Mcp xrpLedgerMcp (Mcp Id: 68fdc0a9bc26c8c446520035):
+inputSchema:
+{"type":"object","properties":{"hash_or_pdf_b64":{"type":"string","description":"Either a 64-character SHA-256 hash or Base64-encoded PDF"}},"required":["hash_or_pdf_b64"]}
+outputSchema:
+{"type":"object","properties":{"sha256":{"type":"string","description":"The SHA-256 hash that was searched for"},"found":{"type":"boolean","description":"Whether the proof was found on the blockchain"},"txHash":{"type":"string","description":"Transaction hash where proof was found (if found)"},"explorerUrl":{"type":"string","description":"URL to view the transaction (if found)"},"timestamp":{"type":"string","description":"ISO 8601 timestamp when proof was created (if found)"},"metadata":{"type":"object","description":"Metadata stored with the proof (if found)"},"ledgerIndex":{"type":"number","description":"Ledger index of the transaction (if found)"},"message":{"type":"string","description":"Message explaining why proof was not found (if not found)"}}}
+schema info of verify ends.
+
+Here is the input and output schema info of Tool xrpl_mint_document_nft of Mcp xrpLedgerMcp (Mcp Id: 68fdc0a9bc26c8c446520035):
+inputSchema:
+{"type":"object","properties":{"cid":{"type":"string","description":"Content identifier (IPFS CID, URL, or document reference)"},"meta":{"type":"object","description":"Optional metadata such as sha256, title, and caseId","properties":{"sha256":{"type":"string"},"title":{"type":"string"},"caseId":{"type":"string"}}}},"required":["cid"]}
+outputSchema:
+{"type":"object","properties":{"nftId":{"type":"string","description":"The unique NFT token ID"},"txHash":{"type":"string","description":"XRPL transaction hash for the NFT mint"},"explorerUrl":{"type":"string","description":"URL to view transaction on XRPL testnet explorer"},"uri":{"type":"object","description":"URI data embedded in the NFT","properties":{"cid":{"type":"string"},"metadata":{"type":"object"}}}}}
+schema info of xrpl_mint_document_nft ends.
+
+Here is the input and output schema info of Tool pay_fee of Mcp xrpLedgerMcp (Mcp Id: 68fdc0a9bc26c8c446520035):
+inputSchema:
+{"type":"object","properties":{"amount_minor":{"type":"number","description":"Amount in drops (1 XRP = 1,000,000 drops)"},"destination":{"type":"string","description":"Destination XRPL address (must be different from sender)"},"memo":{"type":"string","description":"Optional memo text for the payment"}},"required":["amount_minor","destination"]}
+outputSchema:
+{"type":"object","properties":{"txHash":{"type":"string","description":"XRPL transaction hash"},"explorerUrl":{"type":"string","description":"URL to view transaction on XRPL testnet explorer"},"amount":{"type":"number","description":"Amount sent in drops"},"destination":{"type":"string","description":"Destination XRPL address that received the payment"}}}
+schema info of pay_fee ends.
+

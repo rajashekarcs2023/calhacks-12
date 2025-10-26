@@ -1,0 +1,54 @@
+Mcp name: VapiServer
+Mcp Id: 68fd899c61e4e60b74bce282
+Mcp Url: https://mcp.vapi.ai/mcp
+Schema info:
+
+Here is the input and output schema info of Tool list_assistants of Mcp VapiServer (Mcp Id: 68fd899c61e4e60b74bce282):
+inputSchema:
+{"type":"object","properties":{},"additionalProperties":false}
+outputSchema:
+{"type":"object","properties":{"assistants":{"type":"array"}},"additionalProperties":true}
+schema info of list_assistants ends.
+
+Here is the input and output schema info of Tool create_assistant of Mcp VapiServer (Mcp Id: 68fd899c61e4e60b74bce282):
+inputSchema:
+{"type":"object","properties":{"name":{"type":"string"},"model":{"type":"object"},"voice":{"type":"object"},"firstMessage":{"type":"string"}},"additionalProperties":true}
+outputSchema:
+{"type":"object","properties":{"id":{"type":"string"},"name":{"type":"string"}},"additionalProperties":true}
+schema info of create_assistant ends.
+
+Here is the input and output schema info of Tool update_assistant of Mcp VapiServer (Mcp Id: 68fd899c61e4e60b74bce282):
+inputSchema:
+{"type":"object","properties":{"assistantId":{"type":"string"},"name":{"type":"string"},"model":{"type":"object"},"voice":{"type":"object"}},"additionalProperties":true}
+outputSchema:
+{"type":"object","properties":{"id":{"type":"string"},"name":{"type":"string"}},"additionalProperties":true}
+schema info of update_assistant ends.
+
+Here is the input and output schema info of Tool get_assistant of Mcp VapiServer (Mcp Id: 68fd899c61e4e60b74bce282):
+inputSchema:
+{"type":"object","properties":{"assistantId":{"type":"string"}},"additionalProperties":false}
+outputSchema:
+{"type":"object","properties":{"id":{"type":"string"},"name":{"type":"string"},"model":{"type":"object"}},"additionalProperties":true}
+schema info of get_assistant ends.
+
+Here is the input and output schema info of Tool list_calls of Mcp VapiServer (Mcp Id: 68fd899c61e4e60b74bce282):
+inputSchema:
+{"type":"object","properties":{},"additionalProperties":false}
+outputSchema:
+{"type":"object","properties":{"calls":{"type":"array"}},"additionalProperties":true}
+schema info of list_calls ends.
+
+Here is the input and output schema info of Tool create_call of Mcp VapiServer (Mcp Id: 68fd899c61e4e60b74bce282):
+inputSchema:
+{"type":"object","properties":{"assistantId":{"type":"string"},"phoneNumberId":{"type":"string"},"customer":{"type":"object"},"assistantOverrides":{"type":"object"},"scheduledFor":{"type":"string"}},"additionalProperties":true}
+outputSchema:
+{"type":"object","properties":{"id":{"type":"string"},"status":{"type":"string"}},"additionalProperties":true}
+schema info of create_call ends.
+
+Here is the input and output schema info of Tool get_call of Mcp VapiServer (Mcp Id: 68fd899c61e4e60b74bce282):
+inputSchema:
+{"type":"object","properties":{"callId":{"type":"string"}},"additionalProperties":false}
+outputSchema:
+{"type":"object","properties":{"id":{"type":"string"},"status":{"type":"string"},"duration":{"type":"number"}},"additionalProperties":true}
+schema info of get_call ends.
+
